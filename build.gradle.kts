@@ -18,10 +18,12 @@ subprojects {
         maven("https://repo.papermc.io/repository/maven-public/") {
             name = "papermc-repo"
         }
+        maven("https://repo.okaeri.cloud/releases")
     }
 
     apply {
         plugin("kotlin")
+        plugin("com.gradleup.shadow")
     }
 
     dependencies {
