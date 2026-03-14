@@ -1,13 +1,13 @@
 <div align="center">
   <h1>THOChat</h1>
   <p>THOChat is a lightweight production-ready chat plugin for Minecraft servers.</p>
-</div>
 
   [![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/plugin/thochat)
   [![Github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg)](https://github.com/p2tch/THOChat)
   [![Gradle](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg)](https://gradle.org/)
   [![Kotlin](assets/built_with_kotlin.svg)](https://kotlinlang.org/docs/home.html)
   [![paper](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/paper_vector.svg)](https://papermc.io/)
+</div>
 
 <hr>
 
