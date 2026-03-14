@@ -22,8 +22,20 @@ THOChat is licensed under the GNU AGPL v3. See the license file for more informa
 
 <hr>
 
-# 💡 TODO:
-- github actions
-  - build task
-- common module
-- paper module
+# 💡 TODO
+
+## GitHub Actions
+- [ ] Setup build workflow
+
+## Modules
+
+### Common Module
+- [ ] Implement shared utilities and helpers
+
+### Paper Module
+- [ ] Add basic chat management commands
+- [ ] Add basic user management commands
+- [ ] Create chat listener:
+  - Custom chat formatting
+  - Message cooldown
+  - Word filtering (regex)
