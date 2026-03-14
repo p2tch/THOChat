@@ -13,7 +13,7 @@
 
 ### 📜 License
 
-THOReports is licensed under the GNU AGPL v3. See the license file for more information.
+THOChat is licensed under the GNU AGPL v3. See the license file for more information.
 
 <hr>
 
