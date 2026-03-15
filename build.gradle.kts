@@ -19,6 +19,7 @@ subprojects {
             name = "papermc-repo"
         }
         maven("https://repo.okaeri.cloud/releases")
+        maven("https://repo.panda-lang.org/releases")
     }
 
     apply {

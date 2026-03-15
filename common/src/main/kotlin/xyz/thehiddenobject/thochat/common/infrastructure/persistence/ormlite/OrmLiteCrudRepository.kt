@@ -9,11 +9,25 @@ open class OrmLiteCrudRepository<T : Any, ID>(
     connectionSource: ConnectionSource,
     clazz: KClass<T>
 ) {
-    private val dao: Dao<T, ID> =
+
+    protected val dao: Dao<T, ID> =
         DaoManager.createDao(connectionSource, clazz.java)
 
-    fun create(entity: T) = dao.create(entity)
-    fun update(entity: T) = dao.update(entity)
-    fun findById(id: ID): T? = dao.queryForId(id)
-    fun deleteById(id: ID) = dao.deleteById(id)
+    fun create(entity: T) =
+        dao.create(entity)
+
+    fun update(entity: T) =
+        dao.update(entity)
+
+    fun findById(id: ID): T? =
+        dao.queryForId(id)
+
+    fun findAll(): List<T> =
+        dao.queryForAll()
+
+    fun delete(entity: T) =
+        dao.delete(entity)
+
+    fun deleteById(id: ID) =
+        dao.deleteById(id)
 }
