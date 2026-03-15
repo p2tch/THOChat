@@ -18,7 +18,13 @@ class PluginBootstrap: JavaPlugin() {
         )
 
         databaseManager = injector.getInstance(DatabaseManager::class.java)
-        databaseManager.connect(dataFolder)
+
+        try {
+            databaseManager.connect(dataFolder)
+        } catch (e: Exception) {
+            logger.error("Failed to connect to database or create tables: ${e.message}")
+            e.printStackTrace()
+        }
     }
 
     override fun onEnable() {
@@ -26,6 +32,11 @@ class PluginBootstrap: JavaPlugin() {
     }
 
     override fun onDisable() {
-        databaseManager.disconnect()
+        try {
+            databaseManager.disconnect()
+        } catch (e: Exception) {
+            logger.error("Failed to close connection source: ${e.message}")
+            e.printStackTrace()
+        }
     }
 }

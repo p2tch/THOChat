@@ -5,7 +5,6 @@ import com.j256.ormlite.jdbc.DataSourceConnectionSource
 import com.j256.ormlite.support.ConnectionSource
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
-import sun.jvm.hotspot.HelloWorld.e
 import java.io.File
 
 class DatabaseManager @Inject constructor(
@@ -15,6 +14,13 @@ class DatabaseManager @Inject constructor(
     lateinit var connectionSource: ConnectionSource
 
     fun connect(dataFolder: File) {
+        val driver = when (databaseConfiguration.type) {
+            DatabaseType.H2 -> "org.h2.Driver"
+            DatabaseType.MYSQL -> "com.mysql.cj.jdbc.Driver"
+            DatabaseType.POSTGRESQL -> "org.postgresql.Driver"
+            DatabaseType.SQLITE -> "org.sqlite.JDBC"
+        }
+
         val hikariConfig = HikariConfig().apply {
             jdbcUrl = databaseConfiguration.toJdbcUrl(dataFolder)
             username = databaseConfiguration.username
@@ -22,6 +28,7 @@ class DatabaseManager @Inject constructor(
             maximumPoolSize = databaseConfiguration.poolSize
             connectionTimeout = databaseConfiguration.connectionTimeout
             poolName = "THOChat-Pool"
+            driverClassName = driver
         }
 
         dataSource = HikariDataSource(hikariConfig)
