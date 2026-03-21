@@ -6,7 +6,7 @@ dependencies {
     implementation("com.google.inject:guice:7.0.0")
 
     implementation("com.h2database:h2:2.4.240")
-    implementation("com.mysql:mysql-connector-j:9.5.0")
+    implementation("com.mysql:mysql-connector-j:9.6.0")
     implementation("org.postgresql:postgresql:42.7.8")
     implementation("org.xerial:sqlite-jdbc:3.51.1.0")
 
